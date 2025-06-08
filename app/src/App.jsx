@@ -4,31 +4,21 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 to-blue-300">
+      <h1 className="text-4xl font-bold text-blue-700 mb-6">
+        🎉 Tailwind is Working! 🎉
+      </h1>
+      <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center gap-3">
+        <p className="text-lg text-gray-700">
+          If you see this box with rounded corners, shadows, and blue text, <b>Tailwind CSS is set up correctly.</b>
         </p>
+        <button className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-800 transition">
+          Test Button
+        </button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <p className="mt-12 text-gray-400">Edit <code>src/App.jsx</code> to start your project!</p>
+    </div>
   )
 }
 
