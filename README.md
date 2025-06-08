@@ -1,58 +1,113 @@
+# 🎫 Event Finder App (React + Node.js + Tailwind + Vite)
 
-# 🎫 Event Finder App (React + Tailwind + Vite)
-
-A modern React app styled with Tailwind CSS, powered by Vite.  
-This project is set up for easy development and quick UI changes.
+A modern event search web app.
+**Frontend:** React + Vite + Tailwind CSS
+**Backend:** Node.js (Express) proxying Ticketmaster API (keeps your API key secret)
 
 ---
 
 ## 🚀 Quick Start
 
 ### 1. **Clone the Repository**
+
 ```bash
 git clone https://github.com/your-username/event-finder-app.git
 cd event-finder-app
 ```
 
-### 2. **Install Dependencies**
-```bash
-npm install
-```
+---
 
-### 3. **Run the App**
-```bash
-npm run dev
+## 🖥️ Frontend Setup (`/frontend`)
+
+1. Open a terminal and go to the frontend folder:
+
+   ```bash
+   cd frontend
+   ```
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+3. Start the dev server:
+
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+## 🖧 Backend Setup (`/backend`)
+
+1. Open another terminal and go to the backend folder:
+
+   ```bash
+   cd backend
+   ```
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+3. Add a `.env` file in `/backend`:
+
+   ```
+   TICKETMASTER_API_KEY=your_ticketmaster_api_key_here
+   PORT=3001
+   ```
+
+   * **Never commit your real `.env`!**
+4. Start the backend server:
+
+   ```bash
+   node server.js
+   ```
+
+   * The backend will run at [http://localhost:3001](http://localhost:3001)
+
+---
+
+## 🌐 How It Works
+
+* The frontend React app sends event search requests to your backend
+* The backend server fetches data from Ticketmaster using your secret API key and returns results to the frontend
+* Your key is always kept secret, never exposed to users
+
+---
+
+## 📂 Project Structure (Recommended)
+
 ```
-- Open [http://localhost:5173](http://localhost:5173) in your browser.
+/event-finder-app
+  /frontend       # React app
+    /src
+    ...
+    .gitignore
+  /backend        # Express backend
+    server.js
+    .env
+    /routes
+    .gitignore
+```
 
 ---
 
 ## 🛠️ Tech Stack
 
-- [React](https://react.dev/)
-- [Vite](https://vitejs.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-
----
-
-## 📂 Project Structure
-
-```
-src/
-  App.jsx        # Main app component
-  index.css      # Tailwind CSS directives
-  main.jsx       # App entry point
-  ...
-tailwind.config.cjs   # Tailwind config
-postcss.config.cjs    # PostCSS config
-```
+* [React](https://react.dev/)
+* [Vite](https://vitejs.dev/)
+* [Tailwind CSS](https://tailwindcss.com/)
+* [Node.js](https://nodejs.org/)
+* [Express](https://expressjs.com/)
 
 ---
 
 ## ⚡ Notes
 
-- If you see a blue gradient background and styled components, **Tailwind is working!**
-- For any Tailwind or Vite config changes, restart the dev server (`npm run dev`).
+* If you see a blue gradient and styled results, Tailwind is working
+* Backend errors print to your backend terminal (check logs if search fails)
+* For production, use `npm run build` in frontend and a process manager (e.g. PM2) for backend
 
 ---
 
